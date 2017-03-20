@@ -48,4 +48,4 @@ echo "curl -X PUT ${KS_ETCD_SERVER}/v2/keys/${KS_SYS_ENV}/nginx/${KS_PROJECT_NAM
 curl -X PUT ${KS_ETCD_SERVER}/v2/keys/${KS_SYS_ENV}/nginx/${KS_PROJECT_NAME}/online/$container_id -d value=$ip:$port
 
 echo "java $JAVA_OPTS -D server.port=$port -Dloader.path=/data/$KS_PROJECT_NAME/resources -jar /data/$KS_PROJECT_NAME/libs/*.jar"
-java -Dproject.build.version $KS_PROJECT_VERSION $JAVA_OPTS -D$item=$port -Dloader.path=/data/$KS_PROJECT_NAME/resources -jar /data/$KS_PROJECT_NAME/libs/*.jar > /dev/null  2>&1
+java -Dproject.build.version=$KS_PROJECT_VERSION $JAVA_OPTS -D$item=$port -Dloader.path=/data/$KS_PROJECT_NAME/resources -jar /data/$KS_PROJECT_NAME/libs/*.jar > /dev/null  2>&1
