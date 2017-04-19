@@ -1,1 +1,2 @@
 FROM gcr.io/google_containers/fluentd-elasticsearch:1.22
+RUN apt-get update -y && apt-get install rubygems -y && gem install rubygems-update && update_rubygems &&gem update --system
