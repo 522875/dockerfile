@@ -1,0 +1,9 @@
+FROM ubuntu
+RUN sed -i "s/deb.debian.org/mirrors.aliyun.com/g" etc/apt/sources.list
+RUN apt-get update && apt-get install phpldapadmin -y
+
+
+RUN mv /etc/phpldapadmin/config.php /etc/phpldapadmin/config.php.bak
+COPY config.php /etc/phpldapadmin/
+
+CMD ["apachectl","-D","FOREGROUND"]
