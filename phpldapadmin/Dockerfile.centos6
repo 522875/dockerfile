@@ -1,0 +1,10 @@
+FROM centos:6
+
+RUN rpm -ivh http://linux.mirrors.es.net/fedora-epel/6/x86_64/epel-release-6-8.noarch.rpm &&\
+    yum install -y phpldapadmin
+
+RUN mv /etc/phpldapadmin/config.php{,.bak}
+COPY config.php /etc/phpldapadmin/
+
+RUN sed -i "s/Deny from all/Allow from all/g" /etc/httpd/conf.d/phpldapadmin.conf
+CMD ["apachectl","-D","FOREGROUND"]
