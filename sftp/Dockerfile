@@ -1,3 +1,3 @@
 From atmoz/sftp
-RUN echo "Port $PORT" >> /etc/ssh/ssh_config
+RUN echo "Port 20022" >> /etc/ssh/ssh_config
 
