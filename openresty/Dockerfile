@@ -1,0 +1,3 @@
+FROM openresty/openresty
+
+
