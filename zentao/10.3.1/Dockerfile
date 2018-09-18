@@ -1,4 +1,4 @@
-From centos
+From centos:6
 RUN yum update -y && yum install wget php php-pdo php-pdo_mysql gcc unzip -y
 RUN sed -i "s/; extension_dir = \".\/\"/extension_dir = \"\/usr\/lib64\/php\/modules\/\"/g" /etc/php.ini
 RUN echo "extension=pdo.so" > /etc/php.d/pdo.ini
