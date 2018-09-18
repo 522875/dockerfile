@@ -4,4 +4,4 @@ RUN sed -i "s/; extension_dir = \".\/\"/extension_dir = \"\/usr\/lib64\/php\/mod
 RUN echo "extension=pdo.so" > /etc/php.d/pdo.ini
 RUN cd /tmp && curl http://dl.cnezsoft.com/zentao/10.3.1/ZenTaoPMS.10.3.1.zip -o ZenTaoPMS.10.3.1.zip &&\
     unzip ZenTaoPMS.10.3.1.zip && mv zentaopms /var/www/html/
-CMD systemctl start httpd && tail -f /var/log/httpd/access_log
+CMD service httpd start && tail -f /var/log/httpd/access_log
