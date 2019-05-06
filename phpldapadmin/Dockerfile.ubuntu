@@ -1,7 +1,7 @@
 FROM ubuntu
-RUN sed -i "s/deb.debian.org/mirrors.aliyun.com/g" etc/apt/sources.list
+RUN sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" etc/apt/sources.list
 RUN apt-get update && apt-get install phpldapadmin -y
-
+RUN apt-get install language-pack-zh-hans -y 
 
 RUN mv /etc/phpldapadmin/config.php /etc/phpldapadmin/config.php.bak
 COPY config.php /etc/phpldapadmin/
